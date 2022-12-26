@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN”
+“http://www.w3.org/TR/xhtml1/DTD/xhtml1- strict.dtd”>
+<head>
+  <title>Boger</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/atom-one-dark.min.css">
+  <script src="../js/main.js"></script>
+  <script src="../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <div class="main">
+    <div class="header">
+      <img src="../images/avatar.jpg" width="80" height="80" alt="Boger">
+      <div class="site-description">
+        <h2>要像一座卓立的塔，绝不因暴雨而倾斜。</h2>
+        <nav>
+          <ul class="flaticon">
+            <li class="minicons">
+              <a href="#"><img src="../images/svg/wechat.svg" class="imgbody"></img></a>
+              <div>
+                <img src="../images/qrcode_wechat.jpg" alt="" width="128px" height="128px">
+              </div>
+            </li>
+            <li class="minicons">
+              <a href="#"><img src="../images/svg/qq.svg" class="imgbody"></img></a>
+              <div>
+                <img src="../images/qrcode_qq.jpg" alt="" width="128px" height="128px">
+              </div>
+            </li>
+            <li class="minicons">
+              <a href="https://space.bilibili.com/1695833131" target="_blank"><img src="../images/svg/bilibili.svg"
+                  class="imgbody"></img></a>
+              <div>
+                <img src="../images/qrcode_bilibili.jpg" alt="" width="128px" height="128px">
+              </div>
+            </li>
+            <li class="minicons">
+              <a href="https://github.com/Boger0319"><img src="../images/svg/github.svg" class="imgbody"></img></a>
+              <div>
+                <img src="../images/qrcode_github.jpg" alt="" width="128px" height="128px">
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <nav>
+        <ul class="flat">
+          <li class="active">
+            <a href="../index.html" id="#home">🏠首页</a>
+          </li>
+          <li class="dropdown">
+            <a href="../pages/hobby.html">💖爱好</a>
+            <div>
+              <a href="../pages/movies/movies.html">电影</a>
+              <a href="../pages/music/music.html">音乐</a>
+              <a href="../pages/game/game.html">游戏</a>
+            </div>
+          </li>
+          <li class="dropdown-ml">
+            <a href="#">📋笔记</a>
+            <div>
+                <a href="../pages/note-physics.html">大学物理</a>
+                <a href="../pages/note-ai.html">人工智能</a>
+                <a href="../pages/note-jz.html">计算机组成原理</a>
+            </div>
+          </li>
+          <li class="dropdown-ml">
+            <a href="#">💕友链</a>
+            <div>
+              <a href="https://yun.boger.website/" target="_blank">Boger网盘</a>
+              <a href="https://www.programmercarl.com/" target="_blank ">代码随想录</a>
+              <a href="https://book.flutterchina.club/" target="_blank">Flutter实战</a>
+            </div>
+          </li>
+          <li class="">
+            <a href="../pages/about.html" id="#about">👻关于</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <article class="char">
+      <h1 class="article-title center me">《汇编语言程序设计》期末考试重点知识点</h1>
+        <h2>一、入门基础</h2>
+        
+        <p>1.汇编基本格式<br>
+            2.内存管理：小端存储。<br>
+            3.寄存器<br>
+        &emsp;&emsp;16位CPU通用寄存器共8个：AX，BX，CX，DX，BP，SP，SI，DI，它们都可以作为普通的数据寄存器来使用，也有一些特殊的功能，如下：<br>
+        
+        <p>①数据寄存器<br>
+        AX：<br>
+        BX：存放偏移地址<br>
+        CX：循环次数（loop）<br>
+        DX：</p>
+        <p>②指针寄存器<br>
+        SI：存放偏移地址，指向源操作数或作为变址寄存器，参与基址、变址寻址<br>
+        DI：存放偏移地址，指向目的操作数或作为变址寄存器，参与基址、变址寻址<br>
+        SP：堆栈指针，存放偏移地址，与SS结合使用<br>
+        BP：基址寄存器，存放偏移地址，与DS结合使用<br>
+        IP：指令指针</p>
+        <p>③段寄存器<br>
+        CS：代码段<br>
+        DS：数据段<br>
+        SS：堆栈段<br>
+        ES：</p>
+        <p>4.标志位<br>
+        ① ZF（零标志位）：结果为0，则ZF=1.<br>
+        ② PF（奇偶标志位）：结果所有bit位1的个数为偶数，PF=1<br>
+        ③ SF（符号标志位）：有符号数运算，结果为负，SF=1<br>
+        ④ OF（溢出标志位）：有符号数运算，发生溢出，OF=1<br>
+        ⑤ CF（进位标志位）：无符号数运算，记录了最高有效位向更高位的进位或借位</p>
+        <h2>二、指令集</h2>
+        <p><h3>1.数据传送指令</h3>
+        1&gt; MOV &lt;目的操作数&gt; , &lt;源操作数&gt;<br>
+        &emsp;&emsp;① 两个操作数位数一致<br>
+        &emsp;&emsp;② 不能在两个存储单元之中进行数据直接传送<br>
+        &emsp;&emsp;③ 不能在两个段寄存器之间进行数据直接传送<br>
+        &emsp;&emsp;④ imm不能直接送入段寄存器<br>
+        &emsp;&emsp;⑤ 目的操作数不能是CS，IP</p>
+        <p>2&gt; XCHG &lt;目的操作数&gt; , &lt;源操作数&gt; ：交换两个操作数的内容<br>
+            &emsp;&emsp;xchg  reg , reg<br>
+            &emsp;&emsp;xchg  reg , mem<br>
+            &emsp;&emsp;xchg  mem , reg</p>
+        <p>3&gt;LEA  ,  ：将OP1的地址偏移量传送给 OP2<br>
+            &emsp;&emsp;① 源操作数必须是内存操作数<br>
+            &emsp;&emsp;② 目的操作数必须是16位的通用寄存器</p>
+        <p>4&gt;PUSH  , POP ：堆栈<br>
+            &emsp;&emsp;① SS：栈段寄存器  SP：栈顶指针（使用时应当先初始化）<br>
+            &emsp;&emsp;② 一次压入或弹出一个字，栈顶最大变化范围0~FFFFH<br>
+            &emsp;&emsp;③执行PUSH、POP时，SP指针默认移动<br>
+            &emsp;&emsp;④栈空：SP指向栈空间最高地址单元的下一个单元<br>
+            &emsp;&emsp;⑤OP：段寄存器（除CS），16位通用寄存器，内存的16位字</p>
+        <p><h3>2.算数运算指令</h3>
+            &emsp;&emsp;1&gt; ADD   ,   |  SUB   &lt;目的&gt; , &lt;源&gt;<br>
+            &emsp;&emsp;①目的=目的 +/-源<br>
+            &emsp;&emsp;②两操作数不能同时为mem<br>
+        （注：ADD 、SUB影响标志位：CF、ZF、SF、OF、AF、PF）</p>
+        <p>2&gt; INC  &lt;reg/mem&gt;：自增1  |  DEC &lt;reg/mem&gt;：自减1<br>
+        （注：INC、DEC适用于无符号运算，不影响进位标志CF）</p>
+        <p>3&gt; NEG  &lt;reg/mem&gt; ：求负(求补)，按位取反加1<br>
+            &emsp;&emsp;①影响标志位：CF、ZF、SF、OF、AF、PF</p>
+        <p>4&gt; CMP &lt;&gt; , &lt;&gt;：目的操作数—源操作数，不回送结果，只影响标志位<br>
+            &emsp;&emsp;①根据相减结果修改 OF、SF、ZF、CF、AF、PF<br>
+            &emsp;&emsp;②无符号数的比较：<br>
+            &emsp;&emsp;③有符号数的比较：</p>
+        <p>5&gt; MUL &lt;乘数&gt;（无符号乘法）|  IMUL &lt;乘数&gt;（有符号乘法）<br>
+            &emsp;&emsp;①乘数不能位imm<br>
+            &emsp;&emsp;② IMUL指令的执行结果的高半部分不是低半部分的符号扩展，则设置CF、OF</p>
+        <p>6&gt; DIV &lt;除数&gt;（无符号除法） |  IDIV &lt;除数&gt;（有符号除法）<br>
+            &emsp;&emsp;①除数不能位imm<br>
+            &emsp;&emsp;②IDIV：余数符号与被除数相同</p>
+        <p><h3>3.逻辑运算与移位指令</h3>
+        1&gt;AND  &lt;目的&gt; , &lt;源&gt;：按位相与，将结果保存在目的操作数中<br>
+        &emsp;&emsp;①总是清除 OF 和 CF，根据结果修改 SF、ZF、PF<br>
+        &emsp;&emsp;②对特定位清‘0’同时保留其他位<br>
+        &emsp;&emsp;③应用：字符大小写转化</p>
+        <p>2&gt; OR  &lt;目的&gt; , &lt;源&gt;：按位相或，将结果保存在目的操作数中<br>
+            &emsp;&emsp;①使CF=0、OF=0，根据结果修改 SF、ZF、PF<br>
+            &emsp;&emsp;②对特定位置‘1’<br>
+            &emsp;&emsp;③将数字转化位对应的ASCII码</p>
+        <p>3&gt; NOT &lt;reg/mem&gt;：按位取反，不影响任何标志位</p>
+        <p>4&gt; XOR  &lt;目的&gt; , &lt;源&gt;：按位异或，将结果保存在目的操作数中<br>
+            &emsp;&emsp;①对某些为取反，且不影响其它位，与‘0’异或保持不变；与‘1’异或取反<br>
+            &emsp;&emsp;②对寄存器清0，或判断两个值是否相等<br>
+            &emsp;&emsp;③交换两个数，不使用中间变量<br>
+            &emsp;&emsp;④CF=0，OF=0，PF、SF、ZF变</p>
+        <p>5&gt; TEST  , ：按位相与，不回送结果<br>
+            &emsp;&emsp;①清除 OF、CF；修改 SF、ZF、PF<br>
+            &emsp;&emsp;②测试某些位是‘0’或‘1’</p>
+        <p>6&gt; SHL、SHR<br>
+            &emsp;&emsp;①SHL mem/reg , 1<br>
+            &emsp;&emsp;②SHL mem/reg , CL（移动次数&gt;1放入CL）<br>
+            &emsp;&emsp;③相当于乘除法</p>
+        <p><h3>4.程序控制指令</h3>
+        1&gt; JMP :无条件转移指令</p>
+        <p>2&gt;LOOP：循环指令，循环次数存于cx中，执行loop时首先CX=CX-1，然后判断CX=0？，是则跳转</p>
+        <p>3&gt;条件跳转指令<br>
+            &emsp;&emsp;①基于特定的标志值<br>
+            &emsp;&emsp;②根据操作数之间是否相等，或根据(E)CX的值与CMP  , 指令结合使用<br>
+            &emsp;&emsp;③基于无符号整数比较结果的跳转指令<br>
+            &emsp;&emsp;④基于有符号整数比较结果的跳转指令</p>
+        <p><h3>5.输入输出指令(接口与CPU之间的操作)</h3>
+        1&gt; IN  AL|AX  ,  &lt;接口地址&gt;  ：从接口到CPU的输入操作</p>
+        <p>2&gt; OUT &lt;接口地址&gt;  ,  AL|AX ：从CPU到接口的输出操作<br>
+            &emsp;&emsp;①CPU只能用AL或AX接收或发送数据<br>
+            &emsp;&emsp;②直接寻址(接口地址用一个字节表示00~FFH)<br>
+            &emsp;&emsp;&emsp;&emsp;IN  AL,35H<br>
+            &emsp;&emsp;&emsp;&emsp;OUT  44H,AX<br>
+            &emsp;&emsp;③寄存器间接寻址（接口地址由DX内容决定0000~FFFFH）<br>
+            &emsp;&emsp;&emsp;&emsp;MOV DX,03F8H<br>
+            &emsp;&emsp;&emsp;&emsp;IN AL,DX</p>
+        <h2>三、补充</h2>
+        1.CLC ： 使CF=0<br>
+        2.ADC  ,  ： op1=op1+op2+CF</p>
+    </article>
+    <div class="footer">
+      <span></span>
+      <img src="../images/svg/sun.svg" id="day"></img>
+      <img src="../images/svg/moon.svg" id="night"></img>
+      <nav class="nav">
+        2022
+        <a href="">Boger</a>
+        <br>
+        <span id="nowTimeSpan"></span><span id="nowDateTimeSpan"></span>
+      </nav>
+    </div>
+</body>

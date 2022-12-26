@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN”
+“http://www.w3.org/TR/xhtml1/DTD/xhtml1- strict.dtd”>
+<head>
+    <title>Boger</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/atom-one-dark.min.css" />
+    <script src="../js/main.js"></script>
+    <script src="../js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <img src="../images/avatar.jpg" width="80" height="80" alt="Boger">
+            <div class="site-description">
+                <h2>要像一座卓立的塔，绝不因暴雨而倾斜。</h2>
+                <nav>
+                    <ul class="flaticon">
+                        <li class="minicons">
+                            <a href="#"><img src="../images/svg/wechat.svg" class="imgbody"></img></a>
+                            <div>
+                                <img src="../images/qrcode_wechat.jpg" alt="" width="128px" height="128px">
+                            </div>
+                        </li>
+                        <li class="minicons">
+                            <a href="#"><img src="../images/svg/qq.svg" class="imgbody"></img></a>
+                            <div>
+                                <img src="../images/qrcode_qq.jpg" alt="" width="128px" height="128px">
+                            </div>
+                        </li>
+                        <li class="minicons">
+                            <a href="https://space.bilibili.com/1695833131" target="_blank"><img
+                                    src="../images/svg/bilibili.svg" class="imgbody"></img></a>
+                            <div>
+                                <img src="../images/qrcode_bilibili.jpg" alt="" width="128px" height="128px">
+                            </div>
+                        </li>
+                        <li class="minicons">
+                            <a href="https://github.com/Boger0319"><img src="../images/svg/github.svg"
+                                    class="imgbody"></img></a>
+                            <div>
+                                <img src="../images/qrcode_github.jpg" alt="" width="128px" height="128px">
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <nav>
+                <ul class="flat">
+                    <li class="active">
+                        <a href="../index.html" id="#home">🏠首页</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="../pages/hobby.html">💖爱好</a>
+                        <div>
+                            <a href="../pages/movies/movies.html">电影</a>
+                            <a href="../pages/music/music.html">音乐</a>
+                            <a href="../pages/game/game.html">游戏</a>
+                          </div>
+                    </li>
+                    <li class="dropdown-ml">
+                        <a href="#">📋笔记</a>
+                        <div>
+                            <a href="../pages/note-physics.html">大学物理</a>
+                            <a href="../pages/note-ai.html">人工智能</a>
+                            <a href="../pages/note-jz.html">计算机组成原理</a>
+                        </div>
+                    </li>
+                    <li class="dropdown-ml">
+                        <a href="#">💕友链</a>
+                        <div>
+                            <a href="https://yun.boger.website/" target="_blank">Boger网盘</a>
+                            <a href="https://www.programmercarl.com/" target="_blank">代码随想录</a>
+                            <a href="https://book.flutterchina.club/" target="_blank">Flutter实战</a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <a href="../pages/about.html" id="#about">👻关于</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <article>
+            <h1 class="article-title">
+                27. 移除元素 </h1>
+            <h2>题目</h2>
+            <p>&emsp;&emsp;给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。<br>&emsp;&emsp;不要使用额外的数组空间，你必须仅使用
+                O(1) 额外空间并 原地 修改输入数组。<br>&emsp;&emsp;元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
+            <h4>示例 1:</h4>
+            <pre><code class="lang-C">输入：nums = [3,2,2,3], val = 3
+输出：2, nums = [2,2]
+解释：函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑
+数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = 
+[2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。</code></pre>
+            <h4>示例 2:</h4>
+            <pre><code class="lang-C">输入：nums = [0,1,2,2,3,0,4,2], val = 2
+输出：5, nums = [0,1,4,0,3]
+解释：函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。
+注意这五个元素可为任意顺序。你不需要考虑数组中超出新长度后面的元素。</code></pre>
+            <h4>提示：</h4>
+            <ul>
+                <li>0 <= nums.length <=100</li>
+                <li>0 <= nums[i] <=50</li>
+                <li>0 <= val <=100</li>
+            </ul>
+            <h2>思路</h2>
+            <p>&emsp;&emsp;数组的元素在内存地址中是连续的，不能单独删除数组中的某个元素，只能覆盖。</p>
+            <h2>写法一</h2>
+            <h3>暴力解法</h3>
+            <p>&emsp;&emsp;两层for循环，一个for循环遍历数组元素 ，第二个for循环更新数组。</p>
+            <h4>代码</h4>
+            <pre><code class="lang-C">class Solution {
+            public:
+                int removeElement(vector<int>& nums, int val) {
+                    int size = nums.size();
+                    for (int i = 0; i < size; i++) {
+                        if (nums[i] == val) { // 发现需要移除的元素，就将数组集体向前移动一位
+                            for (int j = i + 1; j < size; j++) {
+                                nums[j - 1] = nums[j];
+                            }
+                            i--; // 因为下标i以后的数值都向前移动了一位，所以i也向前移动一位
+                            size--; // 此时数组的大小-1
+                        }
+                    }
+                    return size;
+            
+                }
+            };</code></pre>
+            <ul>
+                <li>时间复杂度：O(n^2)</li>
+                <li>空间复杂度：O(1)</li>
+            </ul>
+            <h3>双指针法</h3>
+            <blockquote>
+                双指针法（快慢指针法）： 通过一个快指针和慢指针在一个for循环下完成两个for循环的工作。
+            </blockquote>
+            <h4>代码</h4>
+            <pre><code class="lang-C">class Solution {
+        public:
+            int removeElement(vector<int>& nums, int val) {
+                int slowIndex = 0;
+                for (int fastIndex = 0; fastIndex < nums.size(); fastIndex++) {
+                    if (val != nums[fastIndex]) {
+                        nums[slowIndex++] = nums[fastIndex];
+                    }
+                }
+                return slowIndex;
+            }
+         };</code></pre>
+            <ul>
+                <li>时间复杂度：O(n)</li>
+                <li>空间复杂度：O(1)</li>
+            </ul>
+        </article>
+
+        <div class="footer">
+            <span></span>
+            <img src="../images/svg/sun.svg" id="day"></img>
+            <img src="../images/svg/moon.svg" id="night"></img>
+            <nav class="nav">
+                2022
+                <a href="">Boger</a>
+                <br>
+                <span id="nowTimeSpan"></span><span id="nowDateTimeSpan"></span>
+            </nav>
+        </div>
+    </div>
+</body>

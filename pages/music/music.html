@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN”
+“http://www.w3.org/TR/xhtml1/DTD/xhtml1- strict.dtd”>
+<head>
+    <title>Boger</title>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+    <link rel="stylesheet" href="../../css/style.css">
+    
+    <script src="https://cdn.plyr.io/3.7.2/plyr.js"></script>
+    <script src="../../js/main.js"></script>
+  </head>
+  
+  <body>
+    <div class="main">
+        <div class="header">
+            <img src="../../images/avatar.jpg" width="80" height="80" alt="Boger">
+            <div class="site-description">
+                <h2>要像一座卓立的塔，绝不因暴雨而倾斜。</h2>
+                <nav>
+                    <ul class="flaticon">
+                        <li class="minicons">
+                            <a href="#"><img src="../../images/svg/wechat.svg" class="imgbody"></img></a>
+                            <div>
+                                <img src="../../images/qrcode_wechat.jpg" alt="" width="128px" height="128px">
+                            </div>
+                        </li>
+                        <li class="minicons">
+                            <a href="#"><img src="../../images/svg/qq.svg" class="imgbody"></img></a>
+                            <div>
+                                <img src="../../images/qrcode_qq.jpg" alt="" width="128px" height="128px">
+                            </div>
+                        </li>
+                        <li class="minicons">
+                            <a href="https://space.bilibili.com/1695833131" target="_blank"><img
+                                    src="../../images/svg/bilibili.svg" class="imgbody"></img></a>
+                            <div>
+                                <img src="../../images/qrcode_bilibili.jpg" alt="" width="128px" height="128px">
+                            </div>
+                        </li>
+                        <li class="minicons">
+                            <a href="https://github.com/Boger0319"><img src="../../images/svg/github.svg"
+                                    class="imgbody"></img></a>
+                            <div>
+                                <img src="../../images/qrcode_github.jpg" alt="" width="128px" height="128px">
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+      
+            <nav>
+              <ul class="flat">
+                <li class="active">
+                  <a href="../../index.html" id="#home">🏠首页</a>
+                </li>
+                <li class="dropdown">
+                  <a href="../hobby.html">💖爱好</a>
+                  <div>
+                    <a href="../movies/movies.html">电影</a>
+                    <a href="#">音乐</a>
+                    <a href="../game/game.html">游戏</a>
+                  </div>
+                </li>
+                <li class="dropdown-ml">
+                  <a href="#">📋笔记</a>
+                  <div>
+                    <a href="../note-physics.html">大学物理</a>
+                    <a href="../note-ai.html">人工智能</a>
+                    <a href="../note-jz.html">计算机组成原理</a>
+                  </div>
+                </li>
+                <li class="dropdown-ml">
+                  <a href="#">💕友链</a>
+                  <div>
+                    <a href="https://yun.boger.website/" target="_blank">Boger网盘</a>
+                    <a href="https://www.programmercarl.com/" target="_blank ">代码随想录</a>
+                    <a href="https://book.flutterchina.club/" target="_blank">Flutter实战</a>
+                  </div>
+                </li>
+                <li class="">
+                  <a href="../../pages/about.html" id="#about">👻关于</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+  
+        <article>
+            <div class="article-title">
+                <blockquote>Both Sides Now<br><p class="subtitle">Emilia Jones - CODA</p></blockquote>
+            </div>
+            <div class="content">
+                <h1>纯享音乐</h1>
+                <audio id="music1" controls >
+                    <source src="https://correct-1251565502.file.myqcloud.com/movie/Both%20Sides%20Now.mp3" type="audio/mp3" />
+                  </audio>
+                  <script>
+                    const player1mp3 = new Plyr('#music1');
+                  </script>
+                <h1>MV</h1>
+                <video id="video1" controls data-poster="./assets/Both Sides Now.jpg">
+                    <source src="https://correct-1251565502.file.myqcloud.com/movie/Both%20Sides%20Now.mp4" type="video/mp4" />
+                  </video>
+                    <script>
+                        const player1mp4 = new Plyr('#video1');
+                    </script>
+            </div>
+            <br>
+            <div class="article-title">
+                <blockquote>Stitches<br><p class="subtitle">Shawn Mendes</p></blockquote>
+            </div>
+            <div class="content">
+                <h1>纯享音乐</h1>
+                <audio id="music2" controls>
+                    <source src="https://correct-1251565502.file.myqcloud.com/movie/Stitches.mp3" type="audio/mp3" />
+                  </audio>
+                    <script>
+                        const player2mp3 = new Plyr('#music2');
+                    </script>
+                <h1>MV</h1>
+                <video id="player-Stitches" controls data-poster="./assets/Stitches.jpg">
+                    <source src="https://correct-1251565502.file.myqcloud.com/movie/Stitches.mp4" type="video/mp4" />
+                  </video>
+                    <script>
+                        const player2mp4 = new Plyr('#player-Stitches');
+                    </script>
+            </div>
+
+        </article>
+
+        <div class="footer">
+            <span></span>
+            <img src="../../images/svg/sun.svg" id="day"></img>
+            <img src="../../images/svg/moon.svg" id="night"></img>
+            <nav class="nav">
+                2022
+                <a href="">Boger</a>
+                <br>
+                <span id="nowTimeSpan"></span><span id="nowDateTimeSpan"></span>
+            </nav>
+        </div>
+    </div>
+</body>
