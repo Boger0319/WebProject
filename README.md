@@ -3,4 +3,4 @@
 
 **内容仅供参考 切勿直接照抄**
 
-Demo : https://web.ncuter.icu/
+Demo : https://web.ncuter.icu/ | [Netlify](https://storied-raindrop-637107.netlify.app/)
